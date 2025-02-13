@@ -1,0 +1,59 @@
+@use "../../scss/abstracts/variables" as v;
+@use "../../scss/abstracts/mixins" as m;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;200;300;400;500;600;700;800;900&display=swap");
+body {
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+.cover {
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/background/cover.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: v.$white;
+  padding-top: 20vh;
+
+  .cover-image-container {
+    width: 60%;
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  .cover-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    .cover-title {
+      font-size: 3rem;
+      font-weight: 600;
+      letter-spacing: 2rem;
+    }
+
+    .cover-description {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: 0.5rem;
+      color: #0f3b72;
+    }
+  }
+
+  .cover-btn-container {
+    display: flex;
+    width: 60%;
+    padding: 0 10%;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 2.5rem;
+  }
+}

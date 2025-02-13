@@ -1,0 +1,13 @@
+{
+    "navbar": {
+      "home": "ABOUT",
+      "service": "SERVICES",
+      "works": "WORKS",
+      "contact": "CONTACT"
+    },
+    "languages": {
+      "en": "English",
+      "zh-TW": "繁體中文",
+      "zh-CN": "简体中文"
+    }
+  }

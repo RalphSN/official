@@ -1,0 +1,26 @@
+@use '../../scss/abstracts/variables' as v;
+@use '../../scss/abstracts/mixins' as m;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;200;300;400;500;600;700;800;900&display=swap');
+body {
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+    .cover-btn {
+        display: inline-block; 
+        text-decoration: none; 
+        background: linear-gradient(to bottom, #3a9bdc, #0072bc); 
+        color: v.$white;
+        font-size: 1.2rem;
+        font-weight: 500;
+        letter-spacing: .1rem;
+        padding: 1rem 2rem;
+        border-radius: 20px; 
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    
+        &:hover {
+            background: linear-gradient(to bottom, #0072bc, #005f99);
+            transform: translateY(-2px);
+        }
+    }

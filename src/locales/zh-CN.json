@@ -1,0 +1,13 @@
+{
+    "navbar": {
+      "home": "关于我们",
+      "service": "服务项目",
+      "works": "作品信息",
+      "contact": "联系信息"
+    },
+    "languages": {
+      "en": "English",
+      "zh-TW": "繁體中文",
+      "zh-CN": "简体中文"
+    }
+  }
