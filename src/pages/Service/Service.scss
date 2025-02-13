@@ -1,0 +1,20 @@
+@use "../../scss/abstracts/variables" as v;
+@use "../../scss/abstracts/mixins" as m;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;200;300;400;500;600;700;800;900&display=swap");
+body {
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+.service {
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/background/service.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: v.$white;
+    padding-top: 20vh;
+}

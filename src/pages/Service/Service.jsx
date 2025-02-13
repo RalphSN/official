@@ -1,12 +1,12 @@
 import "./Service.scss";
 
 const services = [
-  { key: "cust", label: "客製化" },
-  { key: "sdk", label: "SDK 開發" },
-  { key: "design", label: "UI/UX 設計" },
-  { key: "develop", label: "前後端開發" },
-  { key: "pub", label: "發布與維護" },
-  { key: "opt", label: "效能優化" }
+  { key: "cust", label: "專業客服支援" },
+  { key: "sdk", label: "高效SDK整合" },
+  { key: "design", label: "創新軟體設計" },
+  { key: "develop", label: "定製遊戲開發" },
+  { key: "pub", label: "遊戲發行服務" },
+  { key: "opt", label: "平台設計優化" }
 ];
 
 const Service = () => {
