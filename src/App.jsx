@@ -2,6 +2,8 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Cover from "./pages/Cover/Cover";
 import Service from "./pages/Service/Service";
+import About from "./pages/About/About";
+import Works from "./pages/Works/Works";
 import "./styles/reset.css";
 
 function App() {
@@ -13,6 +15,8 @@ function App() {
       <main className="main">
         <Cover title={title} description={description} />
         <Service />
+        <About />
+        <Works />
       </main>
     </>
   );
