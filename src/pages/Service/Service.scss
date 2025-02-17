@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "../../scss/abstracts/variables" as v;
 @use "../../scss/abstracts/mixins" as m;
 
@@ -43,13 +44,13 @@ body {
 
   @each $name, $colors in $services {
     .#{$name} {
-      background-color: map-get($colors, dot);
+      background-color: map.get($colors, dot);
     }
     .service-item.#{$name} {
-      background-color: map-get($colors, bg);
+      background-color: map.get($colors, bg);
     }
     .service-word.#{$name}-word {
-      color: map-get($colors, text);
+      color: map.get($colors, text);
     }
   }
 
@@ -78,8 +79,8 @@ body {
       width: 40px;
       height: 55px;
       background-color: inherit;
-      clip-path: polygon(100% 50%, 0 0, 0 100%); // 讓三角形指向右側
-      right: -35px; // 在右側
+      clip-path: polygon(100% 50%, 0 0, 0 100%);
+      right: -35px;
       top: 50%;
       transform: translateY(-50%);
       z-index: 2;
@@ -88,7 +89,6 @@ body {
     &:last-child::after {
       content: none;
     }
-
   }
 
   .service-item-inner {
@@ -118,6 +118,6 @@ body {
   .service-word {
     font-size: 1.1rem;
     font-weight: 800;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
   }
 }
