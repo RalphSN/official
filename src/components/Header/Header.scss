@@ -10,21 +10,20 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  //   height: 6rem;
   padding: 1rem 2rem;
   color: v.$white;
   white-space: nowrap;
-  // position: relative;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
 
+  background-color: v.$header-bg;
   //Glassmorphism
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background-color: rgba(255, 255, 255, 0.45);
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(12x);
+  // border: 1px solid rgba(255, 255, 255, 0.25);
+  // background-color: rgba(255, 255, 255, 0.45);
+  // box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+  // backdrop-filter: blur(12x);
 
   //字形設定
 
@@ -59,11 +58,48 @@ body {
         text-decoration: none;
         color: v.$white;
         transition: color 0.35s;
-        mix-blend-mode: overlay;
-        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        padding: 0.5rem 0.7rem;
+        position: relative;
 
+        text-transform: uppercase;
+        transition: all 0.5s;
         &:hover {
-          color: v.$primary;
+          background-color: v.$white;
+          color: v.$header-bg;
+        }
+        &:before {
+          content: "";
+          position: absolute;
+          bottom: 12px;
+          left: 12px;
+          width: 12px;
+          height: 12px;
+          border: 3px solid v.$white;
+          border-width: 0 0 3px 3px;
+          opacity: 0;
+          transition: all 0.3s;
+        }
+        &:hover:before {
+          opacity: 1;
+          bottom: -7px;
+          left: -7px;
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          top: 12px;
+          right: 12px;
+          width: 12px;
+          height: 12px;
+          border: 3px solid v.$white;
+          border-width: 3px 3px 0 0;
+          opacity: 0;
+          transition: all 0.3s;
+        }
+        &:hover:after {
+          opacity: 1;
+          top: -7px;
+          right: -7px;
         }
       }
     }
@@ -215,7 +251,6 @@ body {
       right: -300px;
       width: 250px;
       height: 100vh;
-      background-color: v.$secondary;
       display: flex;
       flex-direction: column;
       justify-content: start;
@@ -223,6 +258,13 @@ body {
       gap: 1rem;
       transition: right 0.35s ease-in-out;
       z-index: 20;
+
+      background-color: v.$header-bg;
+      //Glassmorphism
+      // border: 1px solid rgba(255, 255, 255, 0.25);
+      // background-color: rgba(255, 255, 255, 0.45);
+      // box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+      // backdrop-filter: blur(12x);
 
       &-box {
         flex-direction: column;

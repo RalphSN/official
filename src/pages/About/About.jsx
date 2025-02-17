@@ -18,7 +18,7 @@ const About = () => {
     const { titleEn, titleCh, texts, imgUrl } = aboutContent[0];
 
     return (
-        <section className="about">
+        <section className="about" id="about">
             <div className="about-pic">
                 <img src={imgUrl} alt="團結照片" />
             </div>

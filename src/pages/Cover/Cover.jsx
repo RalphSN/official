@@ -6,7 +6,7 @@ const Cover = (props) => {
   const { title = "Welcome", description = "Your journey begins here" } = props;
 
   return (
-    <section className="cover">
+    <section className="cover" id="cover">
       <div className="cover-image-container">
         <img
           src="https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/logo-thin.png"

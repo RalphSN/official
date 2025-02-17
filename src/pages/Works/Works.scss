@@ -10,7 +10,7 @@ body {
   width: 100%;
   padding: 2rem 8rem;
   padding-top: 10rem;
-  background-image: url("https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/background/works.png");
+  background-image: url("https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/background/works-ex.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -20,12 +20,28 @@ body {
   }
 
   .works-title {
-    color: v.$title;
+    display: inline-block;
+    color: v.$title-dark;
     font-style: italic;
     font-size: 3rem;
     font-weight: bold;
     letter-spacing: .5rem;
     margin-bottom: 2.5rem;
+    margin-left: 5rem;
+    position: relative;
+  }
+  .works-title::before {
+    content: "";
+    position: absolute;
+    left: -1.5rem;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: .9rem;
+    aspect-ratio: 1/1;
+    background-color: v.$white;
+    border-radius: 50%;
+    border: .45rem solid v.$title-dot;
+    margin-right: 1rem;
   }
 
 

@@ -17,7 +17,7 @@ let services = [
 
 const Service = () => {
   return (
-    <section className="service">
+    <section className="service" id="service">
       <h2 className="service-title">專屬於您的最佳選擇</h2>
       <div className="service-dots">
         {services.map((service) => (

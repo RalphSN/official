@@ -4,7 +4,7 @@ import Cover from "./pages/Cover/Cover";
 import Service from "./pages/Service/Service";
 import About from "./pages/About/About";
 import Works from "./pages/Works/Works";
-import "./styles/reset.css";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const title = "遊戲夢想實踐者";
@@ -18,6 +18,7 @@ function App() {
         <About />
         <Works />
       </main>
+      <Footer />
     </>
   );
 }

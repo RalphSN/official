@@ -6,6 +6,8 @@
     padding: 0;
     box-sizing: border-box;
     white-space: nowrap;
+    /* 內容無法被選取或反白 */
+    user-select: none; 
   }
   
   html, body {

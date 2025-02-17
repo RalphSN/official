@@ -7,13 +7,22 @@ import "./Works.scss"; // 引入樣式
 
 const Works = () => {
   const slides = [
-    { id: 1, img: "https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/works.png" },
-    { id: 2, img: "https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/works.png" },
-    { id: 3, img: "https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/works.png" }
+    {
+      id: 1,
+      img: "https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/works.png",
+    },
+    {
+      id: 2,
+      img: "https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/works.png",
+    },
+    {
+      id: 3,
+      img: "https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/works.png",
+    },
   ];
 
   return (
-    <section className="works">
+    <section className="works" id="works">
       <div className="works-header">
         <h2 className="works-title">精選成果</h2>
       </div>
@@ -27,7 +36,11 @@ const Works = () => {
         >
           {slides.map((slide) => (
             <SwiperSlide key={slide.id}>
-              <img src={slide.img} alt={`Work ${slide.id}`} className="works-image" />
+              <img
+                src={slide.img}
+                alt={`Work ${slide.id}`}
+                className="works-image"
+              />
             </SwiperSlide>
           ))}
         </Swiper>

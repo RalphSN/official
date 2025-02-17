@@ -54,11 +54,29 @@ const Header = () => {
     }
   };
 
+  const handleScroll = (event, targetId) => {
+    event.preventDefault(); // 阻止預設跳轉行為
+
+    const targetSection = document.querySelector(targetId);
+    if (targetSection) {
+      window.scrollTo({
+        top: targetSection.offsetTop - 10, // 80px 可調整，確保不被 Navbar 蓋住
+        behavior: "smooth", // 平滑滾動效果
+      });
+
+      setIsMenuOpen(false); // 關閉漢堡選單
+      setOverlayVisible(false);
+      setTimeout(() => {
+        setShowOverlay(false);
+      }, 350);
+    }
+  };
+
   const navLinks = [
-    { key: "navbar.home", href: "#" },
-    { key: "navbar.service", href: "#" },
-    { key: "navbar.works", href: "#" },
-    { key: "navbar.contact", href: "#" },
+    { key: "navbar.home", href: "#about" },
+    { key: "navbar.service", href: "#service" },
+    { key: "navbar.works", href: "#works" },
+    { key: "navbar.contact", href: "#footer" },
   ];
 
   const languages = [
@@ -68,7 +86,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="navbar">
+    <header className="navbar" id="navbar">
       <div className="navbar-container">
         <div className="navbar-logo">
           <img src={imageUrl} alt="Logo" className="logo" />
@@ -100,7 +118,9 @@ const Header = () => {
         <ul className="navbar-links">
           {navLinks.map((link) => (
             <li key={link.key}>
-              <a href={link.href}>{t(link.key)}</a>
+              <a href={link.href} onClick={(e) => handleScroll(e, link.href)}>
+                {t(link.key)}
+              </a>
             </li>
           ))}
         </ul>
