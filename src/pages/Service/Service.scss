@@ -34,12 +34,36 @@ body {
   }
 
   $services: (
-    cust: (dot: v.$cust, bg: v.$cust-bk, text: v.$cust),
-    sdk: (dot: v.$sdk, bg: v.$sdk-bk, text: v.$sdk),
-    design: (dot: v.$design, bg: v.$design-bk, text: v.$design),
-    develop: (dot: v.$develop, bg: v.$develop-bk, text: v.$develop),
-    pub: (dot: v.$pub, bg: v.$pub-bk, text: v.$pub),
-    opt: (dot: v.$opt, bg: v.$opt-bk, text: v.$opt),
+    cust: (
+      dot: v.$cust,
+      bg: v.$cust-bk,
+      text: v.$cust,
+    ),
+    sdk: (
+      dot: v.$sdk,
+      bg: v.$sdk-bk,
+      text: v.$sdk,
+    ),
+    design: (
+      dot: v.$design,
+      bg: v.$design-bk,
+      text: v.$design,
+    ),
+    develop: (
+      dot: v.$develop,
+      bg: v.$develop-bk,
+      text: v.$develop,
+    ),
+    pub: (
+      dot: v.$pub,
+      bg: v.$pub-bk,
+      text: v.$pub,
+    ),
+    opt: (
+      dot: v.$opt,
+      bg: v.$opt-bk,
+      text: v.$opt,
+    ),
   );
 
   @each $name, $colors in $services {
@@ -119,5 +143,33 @@ body {
     font-size: 1.1rem;
     font-weight: 800;
     margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .service {
+    padding-top: 10rem;
+    .service-title {
+      margin-bottom: 2rem;
+    }
+    .service-dots {
+      margin-bottom: 5rem;
+    }
+    .service-item-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      .service-item {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .service {
+    
   }
 }
