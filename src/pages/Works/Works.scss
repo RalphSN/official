@@ -6,8 +6,8 @@ body {
 }
 
 .works {
-  height: 100vh;
-  width: 100%;
+  min-height: 100vh;
+  min-width: 100%;
   padding: 2rem 8rem;
   padding-top: 10rem;
   background-image: url("https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/background/works-ex.png");
@@ -25,7 +25,7 @@ body {
     font-style: italic;
     font-size: 3rem;
     font-weight: bold;
-    letter-spacing: .5rem;
+    letter-spacing: 0.5rem;
     margin-bottom: 2.5rem;
     margin-left: 5rem;
     position: relative;
@@ -36,17 +36,16 @@ body {
     left: -1.5rem;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: .9rem;
+    width: 0.9rem;
     aspect-ratio: 1/1;
     background-color: v.$white;
     border-radius: 50%;
-    border: .45rem solid v.$title-dot;
+    border: 0.45rem solid v.$title-dot;
     margin-right: 1rem;
   }
 
-
   .works-slider {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     overflow: hidden;
 
@@ -68,6 +67,57 @@ body {
       object-fit: cover;
       border-radius: 40px;
       box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      top: 45%;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .works {
+    padding: 2rem;
+    padding-top: 8rem;
+    .works-header {
+      @include m.flex-center;
+      .works-title {
+        margin: 4rem auto;
+        scale: 1.5;
+        &::before {
+          display: none;
+        }
+      }
+    }
+    .works-slider {
+      max-width: 900px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .works {
+    .works-slider {
+      .swiper-button-next,
+      .swiper-button-prev {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .works {
+    padding: 8rem 0;
+    .works-header {
+      .works-title {
+        scale: 1;
+      }
+    }
+    .works-slider {
+      width: 430px;
+      display: inline;
     }
   }
 }

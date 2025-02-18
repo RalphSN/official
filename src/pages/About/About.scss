@@ -7,7 +7,7 @@ body {
 
 .about {
   @include m.flex-center;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   background-image: url("https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/background/about.png");
   background-size: cover;
@@ -16,7 +16,7 @@ body {
   padding: 15% 10%;
 
   .about-pic {
-    width: 55%;
+    width: 500px;
     border-radius: 20px;
     border: 10px solid v.$white;
     margin-right: -6rem;
@@ -30,7 +30,7 @@ body {
   }
 
   .about-content {
-    width: 50%;
+    width: 600px;
     height: auto;
     background-color: rgba(177, 196, 214, 0.6);
     padding: 3rem 3rem 6rem 8rem;
@@ -63,8 +63,51 @@ body {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1024px) {
   .about {
-    display: none;
+    flex-direction: column;
+    padding: 0;
+    .about-pic {
+      margin-right: 0;
+      margin-bottom: -8rem;
+    }
+    .about-content {
+      width: 700px;
+      padding: 5rem;
+      padding-top: 10rem;
+    }
+  }
+}
+
+@media (max-width:768px) {
+  .about {
+    .about-pic {
+      width: 100%;
+      border-radius: 0;
+      border: transparent;
+      margin-bottom: 0;
+      padding: 0 2rem;
+    }
+    .about-content {
+      width: 100%;
+      padding: 2rem 4rem;
+      background: transparent;
+    }
+  }
+}
+@media (max-width:640px) {
+  .about {
+    .about-content {
+      padding: 1rem 2rem;
+      .about-title {
+        &.en{
+            letter-spacing: .1rem;
+        }
+        &.ch{
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+        }
+    }
+    }
   }
 }

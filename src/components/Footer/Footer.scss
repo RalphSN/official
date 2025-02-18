@@ -2,64 +2,130 @@
 @use "../../scss/abstracts/mixins" as m;
 
 .footer {
-    width: 100%;
-    @include m.flex-center;
-    background: linear-gradient(to bottom, rgba(90, 123, 189, 0.8) 0%, v.$footer-bg 20%);
-    // background-color: v.$footer-bg;
-    color: v.$white;
-    padding: 6rem 10rem;
-    
+  width: 100%;
+  @include m.flex-center;
+  justify-content: space-between;
+  background: linear-gradient(
+    to bottom,
+    rgba(90, 123, 189, 0.8) 0%,
+    v.$footer-bg 20%
+  );
+  // background-color: v.$footer-bg;
+  color: v.$white;
+  padding: 5% 5%;
 
-    .footer-info {
-        width: 50%;
-        margin-top: 2rem;
-        .footer-logo {
-            width: 20rem;
-            margin-bottom: 1rem;
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-            }
-        }
-        .footer-address {
-            font-style: normal;
-            letter-spacing: 0.1rem;
-            white-space: normal;
-        }
-    }
-
-    .footer-item {
-        @include m.flex-center;
-        justify-content: flex-start;
-        flex-direction: column;
-        width: 50%;
+  .footer-info {
+    margin-top: 2rem;
+    .footer-logo {
+      width: 20rem;
+      min-width: 8rem;
+      margin-bottom: 1rem;
+      img {
+        width: 100%;
         height: 100%;
-        
-        .footer-item-title {
-            margin-bottom: 2rem;
-        }
-
-        .footer-links {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            column-gap: 6rem;
-
-            .footer-link {
-                &::after {
-                    content: '';
-                    display: block;
-                    width: 0;
-                    height: 2px;
-                    background-color: v.$white;
-                    margin-top: 4px;
-                }
-                &:hover::after {
-                    width: 100%;
-                    transition: all 0.35s;
-                }
-            }
-        }
+        object-fit: contain;
+      }
     }
+    .footer-address {
+      @include m.flex-center;
+      align-items: flex-start;
+      flex-direction: column;
+      font-style: normal;
+      letter-spacing: 0.1rem;
+      white-space: normal;
+      font-size: 1rem;
+      width: 100%;
+      p {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
+  .footer-item {
+    @include m.flex-center;
+    justify-content: flex-start;
+    flex-direction: column;
+    white-space: nowrap;
+    height: 100%;
+    width: 40%;
+
+    .footer-item-title {
+      margin-bottom: 2rem;
+    }
+
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      column-gap: 6rem;
+
+      .footer-link {
+        &::after {
+          content: "";
+          display: block;
+          width: 0;
+          height: 2px;
+          background-color: v.$white;
+          margin-top: 4px;
+        }
+        &:hover::after {
+          width: 100%;
+          transition: all 0.35s;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer {
+    padding: 2rem 4rem;
+    .footer-item {
+      .footer-links {
+        column-gap: 2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    padding: 2rem 2.5rem;
+    .footer-info {
+      width: 100%;
+      @include m.flex-center;
+      .footer-address {
+        margin-left: 2rem;
+      }
+    }
+    .footer-item {
+      width: 100%;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 2px solid rgba(v.$white, 0.7);
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 2rem 1rem;
+    .footer-info {
+      flex-direction: column;
+      width: 100%;
+      padding: 0;
+      .footer-logo {
+        width: 15rem;
+      }
+      .footer-address {
+        margin: 0;
+        font-size: .9rem;
+      }
+    }
+    .footer-item {
+      width: 100%;
+    }
+  }
 }
