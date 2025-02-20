@@ -3,7 +3,10 @@ import './Button.scss';
 
 const Button = ({ text, href }) => {
     return (
-        <a className="cover-btn" href={href} target="_blank" rel="noopener noreferrer">
+        // <a className="cover-btn" href={href} target="_blank" rel="noopener noreferrer">
+        //     {text}
+        // </a>
+        <a className="cover-btn" href={href} >
             {text}
         </a>
     );

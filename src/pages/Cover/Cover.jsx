@@ -18,8 +18,8 @@ const Cover = (props) => {
         <p className="cover-description">{description}</p>
       </div>
       <div className="cover-btn-container">
-        <Button text="了解更多" href="#" />
-        <Button text="聯絡我們" href="#" />
+        <Button text="了解更多" href="#service" />
+        <Button text="聯絡我們" href="#footer" />
       </div>
     </section>
   );
