@@ -13,11 +13,11 @@ const Works = () => {
     },
     {
       id: 2,
-      img: "https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/works.png",
+      img: "https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/works2.png",
     },
     {
       id: 3,
-      img: "https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/works.png",
+      img: "https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/works3.png",
     },
   ];
 
