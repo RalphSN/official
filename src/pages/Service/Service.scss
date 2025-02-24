@@ -11,7 +11,7 @@ body {
   justify-content: start;
   width: 100%;
   min-height: 100vh;
-  background-image: url("https://cdn.jsdelivr.net/gh/RalphSN/images@main/official-images/background/service-ex.png");
+  background-image: url("../images/background/service-ex.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -33,51 +33,35 @@ body {
     margin: 0.5rem auto;
   }
 
-  $services: (
-    cust: (
-      dot: v.$cust,
-      bg: v.$cust-bk,
-      text: v.$cust,
-    ),
-    sdk: (
-      dot: v.$sdk,
-      bg: v.$sdk-bk,
-      text: v.$sdk,
-    ),
-    design: (
-      dot: v.$design,
-      bg: v.$design-bk,
-      text: v.$design,
-    ),
-    develop: (
-      dot: v.$develop,
-      bg: v.$develop-bk,
-      text: v.$develop,
-    ),
-    pub: (
-      dot: v.$pub,
-      bg: v.$pub-bk,
-      text: v.$pub,
-    ),
-    opt: (
-      dot: v.$opt,
-      bg: v.$opt-bk,
-      text: v.$opt,
-    ),
-  );
+  .cust { background-color: v.$cust; }
+  .sdk { background-color: v.$sdk; }
+  .design { background-color: v.$design; }
+  .develop { background-color: v.$develop; }
+  .pub { background-color: v.$pub; }
+  .opt { background-color: v.$opt; }
+  
+  .service-item.cust { background-color: v.$cust-bk; }
+  .service-item.sdk { background-color: v.$sdk-bk; }
+  .service-item.design { background-color: v.$design-bk; }
+  .service-item.develop { background-color: v.$develop-bk; }
+  .service-item.pub { background-color: v.$pub-bk; }
+  .service-item.opt { background-color: v.$opt-bk; }
+  
+  .service-word.cust-word { color: v.$cust; }
+  .service-word.sdk-word { color: v.$sdk; }
+  .service-word.design-word { color: v.$design; }
+  .service-word.develop-word { color: v.$develop; }
+  .service-word.pub-word { color: v.$pub; }
+  .service-word.opt-word { color: v.$opt; }
 
-  @each $name, $colors in $services {
-    .#{$name} {
-      background-color: map.get($colors, dot);
-    }
-    .service-item.#{$name} {
-      background-color: map.get($colors, bg);
-    }
-    .service-word.#{$name}-word {
-      color: map.get($colors, text);
-    }
-  }
+  .service-item-details.cust-word { color: v.$cust; }
+  .service-item-details.sdk-word { color: v.$sdk; }
+  .service-item-details.design-word { color: v.$design; }
+  .service-item-details.develop-word { color: v.$develop; }
+  .service-item-details.pub-word { color: v.$pub; }
+  .service-item-details.opt-word { color: v.$opt; }
 
+  
   .dot {
     width: 22px;
     aspect-ratio: 1/1;
@@ -96,22 +80,30 @@ body {
     aspect-ratio: 1/1;
     border-radius: 50%;
     position: relative;
+    transition: transform 0.35s ease-in-out;
 
-    &::after {
-      content: "";
-      position: absolute;
-      width: 40px;
-      height: 55px;
-      background-color: inherit;
-      clip-path: polygon(100% 50%, 0 0, 0 100%);
-      right: -35px;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 2;
-    }
+    // 右方三角形
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   width: 40px;
+    //   height: 55px;
+    //   background-color: inherit;
+    //   clip-path: polygon(100% 50%, 0 0, 0 100%);
+    //   right: -35px;
+    //   top: 50%;
+    //   transform: translateY(-50%);
+    //   z-index: 2;
+    // }
 
-    &:last-child::after {
-      content: none;
+    // &:last-child::after {
+    //   content: none;
+    // }
+
+    &:hover .service-item-details {
+      opacity: 1;
+      visibility: visible;
+      display: block;
     }
   }
 
@@ -125,8 +117,22 @@ body {
     background-color: v.$white;
     overflow: hidden;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
+    padding: .5rem;
     padding-top: 1rem;
     z-index: 5;
+    transition: transform 0.35s ease-in-out, top 0.35s ease-in-out, left 0.35s ease-in-out, opacity 0.35s ease-in-out;
+
+    .service-item-details {
+      padding: 1rem;
+      font-size: .5rem;
+      font-weight: 500;
+      text-align: center;
+      opacity: 0;
+      margin-top: -.8rem;
+      visibility: hidden;
+      transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out;
+      color: v.$grey;
+    }
   }
 
   .service-item-icon {
